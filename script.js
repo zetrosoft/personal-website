@@ -157,6 +157,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Projects Section Animation
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-5px)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+    });
+});
+
+// Smooth scroll to projects
+const projectsLink = document.querySelector('a[href="#projects"]');
+if (projectsLink) {
+    projectsLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('#projects').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+}
+
 // Add hover effects to project cards
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
